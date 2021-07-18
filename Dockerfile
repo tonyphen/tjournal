@@ -3,7 +3,7 @@ FROM python:3.6
 ENV FLASK_APP run.py
 
 COPY manage.py gunicorn-cfg.py requirements.txt .env ./
-COPY app app
+COPY apps/main app
 COPY authentication authentication
 COPY core core
 

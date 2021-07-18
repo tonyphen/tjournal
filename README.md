@@ -62,10 +62,10 @@ $
 $ # Start the application (development mode)
 $ python manage.py runserver # default port 8000
 $
-$ # Start the app - custom port
+$ # Start the main - custom port
 $ # python manage.py runserver 0.0.0.0:<your_port>
 $
-$ # Access the web app in browser: http://127.0.0.1:8000/
+$ # Access the web main in browser: http://127.0.0.1:8000/
 ```
 
 > Note: To use the app, please access the registration page and create a new user. After authentication, the app will unlock the private pages.
@@ -79,9 +79,9 @@ The project is coded using a simple and intuitive structure presented bellow:
 ```bash
 < PROJECT ROOT >
    |
-   |-- core/                               # Implements app logic and serve the static assets
-   |    |-- settings.py                    # Django app bootstrapper
-   |    |-- wsgi.py                        # Start the app in production
+   |-- core/                               # Implements main logic and serve the static assets
+   |    |-- settings.py                    # Django main bootstrapper
+   |    |-- wsgi.py                        # Start the main in production
    |    |-- urls.py                        # Define URLs served by all apps/nodes
    |    |
    |    |-- static/
@@ -114,7 +114,7 @@ The project is coded using a simple and intuitive structure presented bellow:
    |    |-- views.py                       # Handles login and registration  
    |    |-- forms.py                       # Define auth forms  
    |
-   |-- app/                                # A simple app that serve HTML files
+   |-- main/                                # A simple main that serve HTML files
    |    |
    |    |-- views.py                       # Serve HTML pages for authenticated users
    |    |-- urls.py                        # Define some super simple routes  
@@ -122,7 +122,7 @@ The project is coded using a simple and intuitive structure presented bellow:
    |-- requirements.txt                    # Development modules - SQLite storage
    |
    |-- .env                                # Inject Configuration via Environment
-   |-- manage.py                           # Start the app - Django default start script
+   |-- manage.py                           # Start the main - Django default start script
    |
    |-- ************************************************************************
 ```
