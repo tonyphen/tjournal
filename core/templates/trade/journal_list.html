@@ -1,0 +1,43 @@
+{% extends 'layouts/base.html' %}>
+
+{% block title %}
+    Trading Journal
+{% endblock %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item active" aria-current="page">Journal List</li>
+{% endblock %}
+
+{% block content %}
+    <main class="c-main">
+        <div class="container-fluid">
+            <div class="fade-in">
+                <a href="{% url 'journal_create' %}" class="btn btn-sm btn-outline-info shadow mb-2">Thêm</a>
+                <div class="row">
+                    {% for item in items %}
+                        <div class="col-sm-6 col-md-4">
+                            <div class="card shadow">
+                                <div class="card-header bg-facebook"><strong class="text-uppercase text-white">{{ item.entry_type }}-{{ item.symbol_name }}</strong>
+                                    <a href="{% url 'hc_update' hc.id %}" class="float-right text-white">Cập nhật</a>
+                                </div>
+                                <div class="card-body">
+                                    <p>{{ item.pre_analysis }}</p>
+                                    <p>{{ item.entry_price }}</p>
+                                    <p>{{ item.entry_sl }}</p>
+                                    <p>{{ item.entry_tp }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <div class="row justify-content-between">
+                                        <a href="{% url 'journal_delete' item.id %}" class="btn btn-sm btn-outline-danger">Xóa</a>
+                                        <a href="{% url 'journal_update' item.id %}" class="btn btn-sm btn-outline-primary">Chi tiết</a>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </main>
+{% endblock %}

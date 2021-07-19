@@ -30,8 +30,17 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'apps.main'  # Enable the inner main
+# 3rd party apps
+    'crispy_forms',
+    'bootstrap4',
+    'bootstrap_datepicker_plus',
+
+# Internal Apps
+    'apps.main',
+    'apps.trade',
 ]
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
